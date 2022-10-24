@@ -1,6 +1,6 @@
 {
-  "name": "cpu-simulation",
-  "homepage": "https://majdzayyad.github.io/cpu-simulation",
+  "name": "cpu-simulator",
+  "homepage": "https://majdzayyad.github.io/CPU-Simulator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
