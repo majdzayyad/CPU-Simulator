@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Simulating how Mips assembly code runs on a cpu
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The application is structured in the following way:
 
-## Available Scripts
+1. The first section is the program. Where you write code in assembly for the cpu to run, and after you run it you can view which instruction the cpu is currently running.
 
-In the project directory, you can run:
+2. The second section is a view of the state of the data memory of the program where it is divided into 32 addresses each corresponding to a single word (4 bytes), so the total data memory for this cpu is 1kb.
 
-### `npm start`
+3. The third section is the register file. It contains 8 registers numbered $0 to $7 for simplicity (as opposed to the 32 registers in the real MIPS microarchitecture), and it represents the value of each register during the execution of the program.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The supported instructions are:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+add $r1, $r2, $r3 (add $r3 to $r2 and store the result in $r1)
 
-### `npm test`
+addi $r1, $r2, imm (add an integer represented by imm to $r2 and store result in $r1)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+lw $r1, imm($r2) (load the word from the memory address $r2+imm into the register $r1)
 
-### `npm run build`
+sw $r1, imm($r2) (store the word in $r1 into the memory address $r2 + imm)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+beq $r1, $r2, label (go to the instruction number in label if $r1 and $r2 are equal)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bne $r1, $r2, label (same as beq but if $r1 and $r2 are not equal)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+j label (go to the label unconditionally)
 
-### `npm run eject`
+## Notes:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Labels are the line number in the editor
+Comments can be added using # before the comment
+Click on the demo button to execute a demo program
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
