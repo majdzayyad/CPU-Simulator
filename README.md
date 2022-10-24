@@ -1,4 +1,4 @@
-# Simulating how Mips assembly code runs on a cpu
+# Simulating how Mips assembly code runs on a cpu [Try it](https://majdzayyad.github.io/CPU-Simulator/)
 
 ## The application is structured in the following way:
 
