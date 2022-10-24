@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CPU-Simulator/static/css/main.72db3e97.css",
+    "main.js": "/CPU-Simulator/static/js/main.6aeaf751.js",
+    "index.html": "/CPU-Simulator/index.html",
+    "main.72db3e97.css.map": "/CPU-Simulator/static/css/main.72db3e97.css.map",
+    "main.6aeaf751.js.map": "/CPU-Simulator/static/js/main.6aeaf751.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72db3e97.css",
+    "static/js/main.6aeaf751.js"
+  ]
+}
