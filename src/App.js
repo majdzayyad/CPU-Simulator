@@ -5,7 +5,7 @@ import Registers from './Components/registers';
 import {opcodes, registers, memorySize, markLine, checkInstructions, unmarkLine, executeLine, registerFileInit} from './utils.js'
 
 function App() {
-  const [state, setState] = useState(false) // false means edit mode, true means run mode
+  const [state, setState] = useState(false) // false means edit mode, true means run
   const [pc, setPC] = useState(1)
   const [nextPc, setNextPc] = useState(2)
   const [instructions, setInstructions] = useState([])
